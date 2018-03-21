@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hello, World! on WebAssembly</title>
+  <script>
+    const imports = {
+      env: {
+        date_now: Date.now,
+      }
+    }
+    const wasm = './target/wasm32-unknown-unknown/release/hello_world.wasm'
+    fetch(wasm)
+      .then(response => response.arrayBuffer())
+      .then(bytes => WebAssembly.instantiate(bytes, imports))
+      .then(results => {
+        const { increment, get_timestamp } = results.instance.exports
+        console.log(increment(1))
+        console.log(get_timestamp())
+      })
+  </script>
+</head>
+
+</html>
