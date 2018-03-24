@@ -27,4 +27,3 @@ pub fn rand() -> u32 {
     let seed = 1;
     tinymt32::from_seed(param, seed).gen()
 }
-
