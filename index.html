@@ -10,14 +10,16 @@
         date_now: Date.now,
       }
     }
-    const wasm = './target/wasm32-unknown-unknown/release/hello_world.wasm'
+    const wasm = './target/wasm32-unknown-unknown/release/hello_world_wasm.wasm'
+    const u32 = (num) => num >>> 0
     fetch(wasm)
       .then(response => response.arrayBuffer())
       .then(bytes => WebAssembly.instantiate(bytes, imports))
       .then(results => {
-        const { increment, get_timestamp } = results.instance.exports
-        console.log(increment(1))
+        const { add, get_timestamp, rand } = results.instance.exports
+        console.log(add(1, 2))
         console.log(get_timestamp())
+        console.log(u32(rand()))
       })
   </script>
 </head>

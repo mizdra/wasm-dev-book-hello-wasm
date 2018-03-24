@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["mizdra <pp.mizdra@gmail.com>"]
 
 [dependencies]
+tinymt = { git = "https://github.com/mizdra/rust-tinymt", tag = "0.1.0" }
 
 [lib]
 crate-type = ["cdylib"]
