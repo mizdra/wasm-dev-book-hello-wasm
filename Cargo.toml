@@ -1,5 +1,5 @@
 [package]
-name = "hello_world_wasm"
+name = "hello-wasm"
 version = "0.1.0"
 authors = ["mizdra <pp.mizdra@gmail.com>"]
 
