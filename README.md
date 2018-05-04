@@ -1,5 +1,5 @@
 # hello-wasm
-WebAssembly???.
+WebAssemblyの入門.
 
 ## Usage
 ```
