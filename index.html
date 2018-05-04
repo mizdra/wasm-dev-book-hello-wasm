@@ -10,7 +10,7 @@
         date_now: Date.now,
       }
     }
-    const wasm = './target/wasm32-unknown-unknown/release/hello_wasm.wasm'
+    const wasm = './target/wasm32-unknown-unknown/release/wasm_dev_book_hello_wasm.wasm'
     const toUint32 = (num) => num >>> 0
     fetch(wasm)
       .then(response => response.arrayBuffer())
